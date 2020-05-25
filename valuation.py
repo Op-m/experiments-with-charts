@@ -1,4 +1,6 @@
-# Pulls data from Yahoo Finance
+# Author: Om Prakash Manivannan
+# Description: Pulls stock market data from Yahoo Finance to filter only interested fields
+# Input: Update the "interested_stock_list" variable
 
 import requests, json
 from bs4 import BeautifulSoup
