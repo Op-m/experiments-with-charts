@@ -1,3 +1,7 @@
+# Author: Om Prakash Manivannan
+# Description: Pulls stock market data from Yahoo Finance and identifies Min/Max pivots
+# Input: Update the "ticker_list" variable
+
 import yfinance as yf
 import datetime as dt
 from pandas_datareader import data as pdr
