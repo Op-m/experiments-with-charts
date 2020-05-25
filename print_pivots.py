@@ -21,10 +21,10 @@ class stockTracker:
         self.lowCounter = 0
         self.highCounter = 0
         self.lastHighPivot = 0
-        self.HighRange = [0,0,0,0,0,0,0,0,0,0]
+        self.highRange = [0,0,0,0,0,0,0,0,0,0]
         self.dateHighRange = [0,0,0,0,0,0,0,0,0,0]
         self.lastLowPivot = 0
-        self.LowRange = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.lowRange = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.dateLowRange = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     def getStockData(self):
@@ -35,35 +35,35 @@ class stockTracker:
         df["High"].plot(Label="high")
         df["Low"].plot(Label="low")
         for i in df.index:
-            currentMax = max(self.HighRange, default=0)
+            currentMax = max(self.highRange, default=0)
             high_value = round(df["High"][i],2)
-            self.HighRange=self.HighRange[1:9]
-            self.HighRange.append(high_value)
+            self.highRange=self.highRange[1:9]
+            self.highRange.append(high_value)
             self.dateHighRange = self.dateHighRange[1:9]
             self.dateHighRange.append(i)
-            if currentMax==max(self.HighRange, default=0):
+            if currentMax==max(self.highRange, default=0):
                 self.highCounter+=1
             else:
                 self.highCounter = 0
             if self.highCounter == 5:
                 lastHighPivot = currentMax
-                datehighloc = self.HighRange.index(lastHighPivot)
+                datehighloc = self.highRange.index(lastHighPivot)
                 lastHighDate = self.dateHighRange[datehighloc]
                 self.highPivots.append(lastHighPivot)
                 self.highDates.append(lastHighDate)
-            currentMin = min(self.LowRange, default=0)
+            currentMin = min(self.lowRange, default=0)
             low_value = round(df["Low"][i],2)
-            self.LowRange=self.LowRange[1:9]
-            self.LowRange.append(low_value)
+            self.lowRange=self.lowRange[1:9]
+            self.lowRange.append(low_value)
             self.dateLowRange = self.dateLowRange[1:9]
             self.dateLowRange.append(i)
-            if currentMin==min(self.LowRange, default=0):
+            if currentMin==min(self.lowRange, default=0):
                 self.lowCounter+=1
             else:
                 self.lowCounter = 0
             if self.lowCounter == 5:
                 lastLowPivot = currentMin
-                datelowloc = self.LowRange.index(lastLowPivot)
+                datelowloc = self.lowRange.index(lastLowPivot)
                 lastLowDate = self.dateLowRange[datelowloc]
                 if lastLowPivot != 0:
                     self.lowPivots.append(lastLowPivot)
