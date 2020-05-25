@@ -20,10 +20,6 @@ for entry in interested_stock_list:
     json_input[entry]['Ticker'] = entry
     json_input[entry]['Fair Value'] = tag_value.text
 
-with open("output_dict.json", "w") as file:
-    file.write(json.dumps(json_input))
-    file.close()
-
 print("Ticker\t\tCurrent \t 52Wk-Low \t 52Wk-High \t Value")
 print("="*70)
 for key, value in json_input.items():
