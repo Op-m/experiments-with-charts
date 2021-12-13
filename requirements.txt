@@ -1,7 +1,7 @@
 beautifulsoup4==4.9.1
 bs4==0.0.1
 fix-yahoo-finance==0.1.37
-lxml==4.6.3
+lxml==4.6.5
 matplotlib==3.2.1
 np==1.0.2
 numpy==1.18.4
