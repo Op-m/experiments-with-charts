@@ -4,7 +4,7 @@ fix-yahoo-finance==0.1.37
 lxml==4.6.3
 matplotlib==3.2.1
 np==1.0.2
-numpy==1.18.4
+numpy==1.22.0
 pandas==1.0.3
 pandas-datareader==0.8.1
 requests==2.23.0
