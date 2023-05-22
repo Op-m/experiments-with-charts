@@ -7,5 +7,5 @@ np==1.0.2
 numpy==1.18.4
 pandas==1.0.3
 pandas-datareader==0.8.1
-requests==2.23.0
+requests==2.31.0
 yfinance==0.1.54
